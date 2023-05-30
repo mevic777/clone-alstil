@@ -1,6 +1,6 @@
 <?php
 
-include 'db.php';
+include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $company_name = $_REQUEST['company'];
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($connection->query($sql) === true) {
         echo "Everything was inserted.";
-        header("Location: home.php");
+        header("Location: ../home.php");
     } else {
         echo "Nothing was inserted. " . mysqli_error($connection);
     }

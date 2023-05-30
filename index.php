@@ -23,13 +23,16 @@ switch ($url) {
             echo 'error';
         }
         break;
+    case '/new-car':
+        include './add_new_car/new-car.php';
+        break;
     case '/login':
-        include 'login_system/login.php';
+        include './login_system/login.php';
         break;
     case '/register':
-        include 'login_system/register.php';
+        include './login_system/register.php';
         break;
-    case '/new-car':
-        include 'new-car.php';
+    case '/new-company':
+        include './add_new_company/new_company.php';
         break;
 }

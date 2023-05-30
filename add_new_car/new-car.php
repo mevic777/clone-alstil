@@ -1,14 +1,14 @@
 <?php include 'includes/header.php'; ?>
 
-<div>
-    <form action="process.php" method="POST">
-        <select name="company">
+<div class="container mt-2">
+    <form action="../add_new_car/process.php" method="post">
+        <select name="company" class="form-select">
             <?php foreach ($connection->query("SELECT * FROM COMPANY;") as $company) { ?>
                 <option value="<?php echo $company['name']; ?>"><?= $company['name']; ?></option>
             <?php } ?>
         </select>
-        <input type="text" placeholder="Car model" name="car-model">
-        <button type="submit">Add</button>
+        <input class="form-control" type="text" placeholder="Car model" name="car-model">
+        <button class="btn btn-primary" type="submit">Add</button>
     </form>
 </div>
 
