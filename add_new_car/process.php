@@ -7,9 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $car_model = $_REQUEST['car-model'];
 
     $company_link = strtolower($company_name);
-    $car_link = $company_link . '-' . strtolower($car_model);
+    $db_car_link = str_replace(" ", "-", strtolower($car_model));
+    $car_link = $company_link . '-' . $db_car_link;
 
-    $sql = "INSERT INTO `cars`(`id`, `car_name`, `company_link`, `product_link`) VALUES (NULL, '$car_model', '$company_link', '$car_link');";
+    $sql = "INSERT INTO `cars`(`id`, `car_name`, `company_link`, `product_link`, `company_name`) VALUES (NULL, '$car_model', '$company_link', '$car_link', '$company_name');";
 
     if ($connection->query($sql) === true) {
         echo "Everything was inserted.";
