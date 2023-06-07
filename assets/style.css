@@ -1,14 +1,40 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .form-select {
-    width: 300px !important;
+  width: 300px !important;
 }
 
 .form-control {
-    width: 300px !important;
-    margin: 20px 0 20px 0;
+  width: 300px !important;
+  margin: 20px 0 20px 0;
+}
+
+.block-container {
+  display: flex;
+  position: relative;
+}
+
+.block {
+  padding: 30px;
+  border: 2px solid black;
+  box-shadow: 0 0 10px 0 black;
+  width: 300px;
+  height: 150px;
+}
+
+.block-animation {
+  width: 600px;
+  height: 300px;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 768px) {
+  .block-container {
+    flex-wrap: wrap;
+  }
 }
